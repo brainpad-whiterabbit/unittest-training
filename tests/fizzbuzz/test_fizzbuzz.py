@@ -1,4 +1,4 @@
-from level1.fizzbuzz import fizzbuzz
+from fizzbuzz.fizzbuzz import fizzbuzz
 
 
 def test_fizzbuzz_example():

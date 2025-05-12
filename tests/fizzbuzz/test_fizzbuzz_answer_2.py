@@ -1,5 +1,5 @@
 import pytest
-from level1.fizzbuzz import fizzbuzz
+from fizzbuzz.fizzbuzz import fizzbuzz
 
 
 # 正常系テストをパラメータ化
