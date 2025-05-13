@@ -9,7 +9,7 @@ def fizzbuzz(n: int) -> str:
         str: FizzBuzzの結果を含む文字列。
     Restricted:
         nは1以上1000以下の整数であること。
-        引数が整数でない場合はValueErrorを発生させること。
+        引数が範囲内の整数でない場合はValueErrorを発生させること。
         引数が整数でない場合はTypeErrorを発生させること。
     Example:
         >>> fizzbuzz(3)
