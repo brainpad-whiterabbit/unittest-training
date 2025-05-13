@@ -15,23 +15,22 @@
 └── uv.lock
 ```
 
-## セットアップ
-1. 必要な依存関係をインストールします。
-
-```bash
-make init
-```
-
-2. VSCode拡張機能のインストール
-左のツールバーから拡張機能のエクスプローラを開き、以下の拡張機能がインストールされていることを確認してください。
-
-- Python: `ms-python.python`
-- Ruff: `charliermarsh.ruff`
-
 ## テストの実行方法
 
 ```bash
 make test
+```
+
+## テストのカバレッジを確認する方法
+
+```bash
+make coverage
+```
+
+## コードの静的解析
+
+```bash
+make lint
 ```
 
 ## コードのフォーマット
