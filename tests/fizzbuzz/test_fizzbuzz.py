@@ -31,6 +31,14 @@ def test_fizzbuzz_multiple_15():
 
     assert result == expected_output
 
+def test_fizzbuzz_multiple_1():
+    input_value = 1
+    expected_output = "1"
+
+    result = fizzbuzz(input_value)
+
+    assert result == expected_output
+
 def test_fizzbuzz_answer_type():
     input_value = 15
 
@@ -43,6 +51,10 @@ def test_fizzbuzz_0():
     with pytest.raises(ValueError, match="n must be between 1 and 1000."):
         fizzbuzz(input_value)
 
+def test_fizzbuzz_1001():
+    input_value = 1001
+    with pytest.raises(ValueError, match="n must be between 1 and 1000."):
+        fizzbuzz(input_value)
 
 def test_fizzbuzz_less_than_0():
     input_value = -100
