@@ -53,6 +53,27 @@ def test_fizzbuzz_normal_4():
     # Assert
     assert result == expected_output
 
+def test_fizzbuzz_normal_5():
+    input_value = 100
+    expected_output = "Buzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_6():
+    input_value = 570
+    expected_output = "FizzBuzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+
 def test_fizzbuzz_edge_1():
     input_value = 0
     with pytest.raises(ValueError):
@@ -85,5 +106,10 @@ def test_fizzbuzz_edge_6():
 
 def test_fizzbuzz_edge_7():
     input_value = 1e308
+    with pytest.raises(TypeError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_8():
+    input_value = "13"
     with pytest.raises(TypeError):
         fizzbuzz(input_value)
