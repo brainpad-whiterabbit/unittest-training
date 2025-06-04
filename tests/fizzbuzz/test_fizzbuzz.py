@@ -13,13 +13,6 @@ def test_fizzbuzz_example():
     # Assert
     assert result == expected_output
 
-def test_fizzbuzz_edge_1():
-    input_value = 0
-    with pytest.raises(ValueError) as e:
-        fizzbuzz(input_value)
-        
-    # assert str(e.value) == "不正な値です"
-
 def test_fizzbuzz_normal_1():
     input_value = 5
     expected_output = "Buzz"
@@ -30,4 +23,47 @@ def test_fizzbuzz_normal_1():
     # Assert
     assert result == expected_output
 
+def test_fizzbuzz_normal_2():
+    input_value = 15
+    expected_output = "FizzBuzz"
 
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_3():
+    input_value = 1
+    expected_output = "1"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_4():
+    input_value = 1000
+    expected_output = "Buzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_edge_1():
+    input_value = 0
+    with pytest.raises(ValueError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_2():
+    input_value = 1001
+    with pytest.raises(ValueError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_3():
+    input_value = "hoge"
+    with pytest.raises(TypeError):
+        fizzbuzz(input_value)
