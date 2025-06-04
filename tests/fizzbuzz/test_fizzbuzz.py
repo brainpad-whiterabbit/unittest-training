@@ -1,4 +1,5 @@
 from fizzbuzz.fizzbuzz import fizzbuzz
+import pytest
 
 
 def test_fizzbuzz_example():
@@ -11,3 +12,104 @@ def test_fizzbuzz_example():
 
     # Assert
     assert result == expected_output
+
+def test_fizzbuzz_normal_1():
+    input_value = 5
+    expected_output = "Buzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_2():
+    input_value = 15
+    expected_output = "FizzBuzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_3():
+    input_value = 1
+    expected_output = "1"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_4():
+    input_value = 1000
+    expected_output = "Buzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_5():
+    input_value = 100
+    expected_output = "Buzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+def test_fizzbuzz_normal_6():
+    input_value = 570
+    expected_output = "FizzBuzz"
+
+    # Act
+    result = fizzbuzz(input_value)
+
+    # Assert
+    assert result == expected_output
+
+
+def test_fizzbuzz_edge_1():
+    input_value = 0
+    with pytest.raises(ValueError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_2():
+    input_value = 1001
+    with pytest.raises(ValueError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_3():
+    input_value = "hoge"
+    with pytest.raises(TypeError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_4():
+    input_value = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+    with pytest.raises(ValueError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_5():
+    input_value = -99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+    with pytest.raises(ValueError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_6():
+    input_value = 3.3
+    with pytest.raises(TypeError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_7():
+    input_value = 1e308
+    with pytest.raises(TypeError):
+        fizzbuzz(input_value)
+
+def test_fizzbuzz_edge_8():
+    input_value = "13"
+    with pytest.raises(TypeError):
+        fizzbuzz(input_value)
