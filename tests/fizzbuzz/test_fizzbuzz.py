@@ -1,4 +1,5 @@
 from fizzbuzz.fizzbuzz import fizzbuzz
+import pytest
 
 
 def test_fizzbuzz_example():
@@ -12,6 +13,7 @@ def test_fizzbuzz_example():
     # Assert
     assert result == expected_output
 
+
 def test_fizzbuzz_multiple_5():
     input_value = 5
     expected_output = "Buzz"
@@ -19,6 +21,7 @@ def test_fizzbuzz_multiple_5():
     result = fizzbuzz(input_value)
 
     assert result == expected_output
+
 
 def test_fizzbuzz_multiple_15():
     input_value = 15
@@ -28,6 +31,32 @@ def test_fizzbuzz_multiple_15():
 
     assert result == expected_output
 
+def test_fizzbuzz_answer_type():
+    input_value = 15
+
+    result = fizzbuzz(input_value)
+
+    assert type(result) is str
+
 def test_fizzbuzz_0():
     input_value = 0
-    
+    with pytest.raises(ValueError, match="n must be between 1 and 1000."):
+        fizzbuzz(input_value)
+
+
+def test_fizzbuzz_less_than_0():
+    input_value = -100
+    with pytest.raises(ValueError, match="n must be between 1 and 1000."):
+        fizzbuzz(input_value)
+
+
+def test_fizzbuzz_more_than_1000():
+    input_value = 10000
+    with pytest.raises(ValueError, match="n must be between 1 and 1000."):
+        fizzbuzz(input_value)
+
+
+def test_fizzbuzz_diferent_type():
+    input_value = 0.01
+    with pytest.raises(TypeError, match="n must be an integer."):
+        fizzbuzz(input_value)
