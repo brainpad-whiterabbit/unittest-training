@@ -19,3 +19,15 @@ def test_fizzbuzz_multiple_5():
     result = fizzbuzz(input_value)
 
     assert result == expected_output
+
+def test_fizzbuzz_multiple_15():
+    input_value = 15
+    expected_output = "FizzBuzz"
+
+    result = fizzbuzz(input_value)
+
+    assert result == expected_output
+
+def test_fizzbuzz_0():
+    input_value = 0
+    
