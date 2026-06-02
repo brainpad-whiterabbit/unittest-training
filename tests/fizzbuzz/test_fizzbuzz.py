@@ -2,6 +2,7 @@ from fizzbuzz.fizzbuzz import fizzbuzz
 
 
 def test_fizzbuzz_expected_value():
+    # Arrange
     cases = [
         (1, "1"),  # plain number, lower boundary of valid range
         (3, "Fizz"),  # divisible by 3 only
@@ -10,12 +11,17 @@ def test_fizzbuzz_expected_value():
         (1000, "Buzz"),  # upper boundary of valid range, divisible by 5
     ]
 
+    # Act and Assert
     for input_value, expected_output in cases:
         assert fizzbuzz(input_value) == expected_output
 
 
 def test_fizzbuzz_value_error():
-    for invalid_value in [0, 1001]:
+    # Arrange
+    invalid_values = [0, 1001]
+
+    # Act and Assert
+    for invalid_value in invalid_values:
         try:
             fizzbuzz(invalid_value)
             assert False, f"Expected ValueError for {invalid_value}"
@@ -24,7 +30,11 @@ def test_fizzbuzz_value_error():
 
 
 def test_fizzbuzz_type_error():
-    for invalid_value in ["a", 2.5]:
+    # Arrange
+    invalid_values = ["a", 2.5]
+
+    # Act and Assert
+    for invalid_value in invalid_values:
         try:
             fizzbuzz(invalid_value)
             assert False, f"Expected TypeError for {invalid_value!r}"
