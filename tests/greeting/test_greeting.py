@@ -13,10 +13,10 @@ from greeting.greeting import get_greeting
         # 2. 昼 (12:00 ~ 17:59)
         (12, 0, "Good afternoon!"),  # 境界値（始まり）
         (17, 59, "Good afternoon!"),  # 境界値（終わり）
-        # 3. 夜 (18:00 ~ 21:59)
+        # 3. 夕 (18:00 ~ 21:59)
         (18, 0, "Good evening!"),  # 境界値（始まり）
         (21, 59, "Good evening!"),  # 境界値（終わり）
-        # 4. 夜中・深夜 (22:00 ~ 4:59)
+        # 4. 夜 (22:00 ~ 4:59)
         (22, 0, "Good night!"),  # 境界値（始まり）
         (4, 59, "Good night!"),  # 境界値（終わり）
     ],
