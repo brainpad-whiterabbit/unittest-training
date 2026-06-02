@@ -16,6 +16,7 @@ def test_fizzbuzz_example():
 
 # === ここから新しく追加するテストケース ===
 
+
 def test_fizzbuzz_normal_cases():
     """正常系のテスト: さまざまな入力値に対する戻り値を検証します"""
     # 5の倍数の場合
@@ -80,3 +81,38 @@ def test_fizzbuzz_type_error_float():
         fizzbuzz(invalid_input)
 
     assert str(excinfo.value) == "n must be an integer."
+
+
+def test_fizzbuzz_type_error_boolean_true():
+    """异常系のテスト: 整数以外の型（布動型/ブーリアン True）が入力された場合に TypeError が発生するか検証します"""
+    # Arrange（準備）
+    invalid_input = True
+
+    # Act & Assert（実行と検証）
+    with pytest.raises(TypeError) as excinfo:
+        fizzbuzz(invalid_input)
+
+    assert str(excinfo.value) == "n must be an integer."
+
+
+def test_fizzbuzz_type_error_boolean_false():
+    """异常系のテスト: 整数以外の型（ブーリアン False）が入力された場合に TypeError が発生するか検証します"""
+    # Arrange（準備）
+    invalid_input = False
+
+    # Act & Assert（実行と検証）
+    with pytest.raises(TypeError) as excinfo:
+        fizzbuzz(invalid_input)
+
+    assert str(excinfo.value) == "n must be an integer."
+
+
+def test_fizzbuzz_value_error_extreme():
+    """異常系のテスト: 極端な負数や大きな数が入力された場合を検証します"""
+    # 負の数の場合
+    with pytest.raises(ValueError):
+        fizzbuzz(-9999)
+
+    # 極端に大きな数の場合
+    with pytest.raises(ValueError):
+        fizzbuzz(999999)
