@@ -100,3 +100,16 @@ def test_fizzbuzz_example8():
 
     # Assert
     assert str(excinfo.value) == expected_output
+
+
+def test_fizzbuzz_example9():
+    # Arrange
+    input_value = 1.5
+    expected_output = "n must be an integer."
+
+    # Act
+    with pytest.raises(TypeError) as excinfo:
+        fizzbuzz(input_value)
+
+    # Assert
+    assert str(excinfo.value) == expected_output
